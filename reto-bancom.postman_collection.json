@@ -1,0 +1,307 @@
+{
+	"info": {
+		"_postman_id": "ead1cb2e-5b75-45b1-87e6-b05779f0bc40",
+		"name": "reto-bancom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1393767"
+	},
+	"item": [
+		{
+			"name": "create-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cellPhone\": \"958045426\",\r\n    \"name\": \"JULIO_ARMANDO\",\r\n    \"lastName\": \"VEGA SALVADOR\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/external/user/user-create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"user",
+						"user-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/external/user/user-list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"user",
+						"user-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6Miwic3ViIjoiSlVMSU9BUk1BTkRPIiwiaWF0IjoxNjk5MTQxODgyLCJleHAiOjE2OTkxNDMzMjJ9.qqkKJA_XQVpa-TBSXft2BLEv1OclMRv_gNYONZR0QIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"cellPhone\": \"958045426\",\r\n    \"name\": \"JULIOARMANDO\",\r\n    \"lastName\": \"Vega\",\r\n    \"password\": \"1244\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user/user-update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"user-update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"JULIO_ARMANDO\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/external/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"external",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6Miwic3ViIjoiSlVMSU9BUk1BTkRPIiwiaWF0IjoxNjk5MTQxODgyLCJleHAiOjE2OTkxNDMzMjJ9.qqkKJA_XQVpa-TBSXft2BLEv1OclMRv_gNYONZR0QIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/user-delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"user-delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6Mywic3ViIjoiSlVMSU9fQVJNQU5ETyIsImlhdCI6MTY5OTE0MjYyMCwiZXhwIjoxNjk5MTQ0MDYwfQ.uFYLDG8U2YRD8j89UtIhU_W3R6m3Y2_38zKELbphNhM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"textPost\":\"POST DE PRUEBA USUARIO JV\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/post/post-create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"post",
+						"post-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6Mywic3ViIjoiSlVMSU9fQVJNQU5ETyIsImlhdCI6MTY5OTE0MjYyMCwiZXhwIjoxNjk5MTQ0MDYwfQ.uFYLDG8U2YRD8j89UtIhU_W3R6m3Y2_38zKELbphNhM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postId\":2,\r\n    \"textPost\": \"MOD POST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/post/post-update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"post",
+						"post-update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6Mywic3ViIjoiSlVMSU9fQVJNQU5ETyIsImlhdCI6MTY5OTE0MjYyMCwiZXhwIjoxNjk5MTQ0MDYwfQ.uFYLDG8U2YRD8j89UtIhU_W3R6m3Y2_38zKELbphNhM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/post/post-delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"post",
+						"post-delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6Mywic3ViIjoiSlVMSU9fQVJNQU5ETyIsImlhdCI6MTY5OTE0MjYyMCwiZXhwIjoxNjk5MTQ0MDYwfQ.uFYLDG8U2YRD8j89UtIhU_W3R6m3Y2_38zKELbphNhM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/post/post-list/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"post",
+						"post-list",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

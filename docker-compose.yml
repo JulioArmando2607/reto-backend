@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  api:
+    container_name: bancom-backend
+    image: bancom-backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    restart: always
